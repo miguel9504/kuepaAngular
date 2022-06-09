@@ -1,0 +1,271 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+section {
+    height: 100%;
+    width: 100%;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* lateral */
+.menu-bar-vertical {
+    background: #333639;
+    height: 100%;
+}
+
+.figure {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.ul-bar-vertical {
+    list-style: none;
+    margin: 0;
+    margin-top: 60px;
+    padding: 0;
+    width: 100%;
+}
+
+.ul-bar-vertical li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px;
+    padding: 0;
+    cursor: pointer;
+    color: #fff;
+}
+
+.ul-bar-vertical svg:hover {
+    color: #fd531e;
+}
+
+.activo svg {
+    color: #fd531e;
+}
+
+
+.nav-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* main */
+.section-main {
+    height: 100%;
+    width: 100%;
+    flex-grow: 2;
+    background-color: #333639;
+    min-width: 885px;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px 0 0 50px;
+    background-color: #f9f9f9;
+    padding: 30px;
+}
+
+.imput-search {
+    border-radius: 7rem !important;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#input-date {
+    border-radius: 7rem !important;
+    border: none;
+    background: #f3f3f3;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+.card {
+    border-radius: 20px;
+    border: none;
+    padding: 0px;
+    margin-top: 20px;
+    flex: 1 1 25rem;
+}
+
+.card:first-child {
+    width: 30rem;
+    margin-right: 20px;
+    height: auto;
+}
+
+.card:nth-child(2) {
+    width: 15rem;
+}
+
+.bar {
+    margin-top: 10px;
+}
+
+.progress {
+    height: 5px;
+}
+
+.progress-bar {
+    background: rgb(214, 51, 132);
+    background: linear-gradient(90deg, rgba(214, 51, 132, 1) 9%, rgba(253, 83, 30, 1) 100%);
+    height: 5px;
+}
+
+@keyframes growProgressBar {
+
+    0%,
+    33% {
+        --pgPercentage: 0;
+    }
+
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+@property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+div[role="progressbar"] {
+    --size: 5rem;
+    --fg: #fd531e;
+    --bg: #f3f3f3;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+        conic-gradient(rgba(214, 51, 132, 1), rgba(253, 83, 30, 1) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+}
+
+.leads {
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 40px 40px;
+    column-gap: 40px;
+    row-gap: 15px;
+}
+
+.cards-s2 {
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 1216px) {
+
+    .cards-s2 {
+        margin-top: 10px;
+    }
+
+    .card:first-child {
+        width: 20rem;
+        margin-right: 20px;
+        height: auto;
+    }
+
+    .leads {
+        margin-left: 80px;
+        display: grid;
+        grid-template-columns: 150px;
+        grid-template-rows: 40px 40px;
+        column-gap: 40px;
+        row-gap: 15px;
+    }
+
+    div[role="progressbar"] {
+        --size: 8rem;
+    }
+
+    .meta-grupal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+.plan-hoy {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+.plan-hoy div {
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* bar lateral */
+
+.bar-lateral {
+    height: 100%;
+    background-color: #fff;
+}
+
+.bar-lateral-container {
+    padding: 10px;
+    height: 100%;
+    width: 90%;
+    background: #333639;
+    border-radius: 50px 0 0 50px;
+}
+
+.small-card-header {
+    background-color: #f3f3f3;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.small-card-body {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0 0 15px 15px !important;
+}
